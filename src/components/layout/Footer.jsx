@@ -11,6 +11,9 @@ export default function Footer() {
       <button type="button" className="btn-atlas" data-cursor="Up" onClick={scrollToTop}>
         Back to the garden
       </button>
-    </footer>
+      <div className="dev-signature" style={{ position: "absolute", left: "2rem", bottom: "1.5rem", fontSize: "0.85rem", opacity: 0.7, letterSpacing: "1px", fontFamily: "inherit" }}>
+    dev by zenobia
+  </div>
+</footer>
   )
 }
