@@ -9,7 +9,7 @@ import { blueprints } from '../../data/blueprints'
 import { sceneThemes } from '../../utils/colors'
 import useThemeRef from '../../hooks/useThemeRef'
 import { selectSelectedFlower } from '../../store/slices/flowersSlice'
-import { setLoaded } from '../../store/slices/uiSlice'
+import { setReady } from '../../store/slices/uiSlice'
 import Flower from './Flower'
 import Particles from './Particles'
 import CameraRig from './CameraRig'
@@ -144,7 +144,7 @@ export default function Scene() {
       dpr={[1, 1.75]}
       gl={{ antialias: false, powerPreference: 'high-performance' }}
       onCreated={() => {
-        setTimeout(() => dispatch(setLoaded(true)), 1200)
+        setTimeout(() => dispatch(setReady(true)), 1200)
       }}
     >
       <Provider store={store}>

@@ -1,5 +1,18 @@
 export const flowers = [
   {
+    id: 'hydrangea',
+    name: 'Hydrangea',
+    latin: 'Hydrangea macrophylla',
+    meaning: 'Shaped by the Ground',
+    philosophy: 'A hydrangea takes its color from the soil: blue in acid ground, pink where it is alkaline. Each cluster is hundreds of small florets leaning on one another, a reminder that we are made partly by where we stand, and that changing the ground can change the bloom.',
+    quote: 'Change the soil and you change the color.',
+    origin: 'Japan',
+    petals: 4,
+    petalShape: 'round',
+    cluster: 37,
+    colors: { primary: '#6f8fe8', secondary: '#c8d5ff', glow: '#8fb0ff', core: '#e5e0a0' }
+  },
+  {
     id: 'lotus',
     name: 'Lotus',
     latin: 'Nelumbo nucifera',
@@ -70,19 +83,6 @@ export const flowers = [
     petals: 6,
     petalShape: 'curled',
     colors: { primary: '#ffffff', secondary: '#f1f5f9', glow: '#bde0fe', core: '#f9c74f' }
-  },
-  {
-    id: 'hydrangea',
-    name: 'Hydrangea',
-    latin: 'Hydrangea macrophylla',
-    meaning: 'Shaped by the Ground',
-    philosophy: 'A hydrangea takes its color from the soil: blue in acid ground, pink where it is alkaline. Each cluster is hundreds of small florets leaning on one another, a reminder that we are made partly by where we stand, and that changing the ground can change the bloom.',
-    quote: 'Change the soil and you change the color.',
-    origin: 'Japan',
-    petals: 4,
-    petalShape: 'round',
-    cluster: 37,
-    colors: { primary: '#6f8fe8', secondary: '#c8d5ff', glow: '#8fb0ff', core: '#e5e0a0' }
   }
 ]
 

@@ -156,7 +156,7 @@ export const blueprints = {
     ]
   },
   hydrangea: {
-    position: [-3.4, 0, -4.4],
+    position: [8.6, 0, -0.2],
     headY: 1.35,
     lookY: 1.6,
     camDist: 4.8,

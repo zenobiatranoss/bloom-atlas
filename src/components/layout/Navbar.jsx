@@ -1,4 +1,5 @@
 import ThemeSwitcher from '../ui/ThemeSwitcher'
+import SoundToggle from '../ui/SoundToggle'
 import { scrollToId, scrollToTop } from '../../utils/scroll'
 
 const links = [
@@ -25,7 +26,10 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
-      <ThemeSwitcher />
+      <div className="atlas-nav__tools">
+        <SoundToggle />
+        <ThemeSwitcher />
+      </div>
     </nav>
   )
 }

@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const uiSlice = createSlice({
   name: 'ui',
   initialState: {
+    ready: false,
     loaded: false,
     detailOpen: false,
     menuOpen: false,
@@ -10,6 +11,12 @@ const uiSlice = createSlice({
     scrollProgress: 0
   },
   reducers: {
+    setReady(state, action) {
+      state.ready = action.payload
+    },
+    setSound(state, action) {
+      state.soundOn = action.payload
+    },
     setLoaded(state, action) {
       state.loaded = action.payload
     },
@@ -32,6 +39,8 @@ const uiSlice = createSlice({
 })
 
 export const {
+  setReady,
+  setSound,
   setLoaded,
   openDetail,
   closeDetail,

@@ -1,6 +1,4 @@
-import { useEffect } from "react";
-
-
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { AnimatePresence, motion } from 'framer-motion'
 import Scene from './components/three/Scene'
@@ -19,13 +17,6 @@ import { selectFlower, nextFlower, prevFlower, selectSelectedFlower } from './st
 import { scrollToId } from './utils/scroll'
 
 export default function App() {
-  useEffect(() => {
-    const audio = new Audio("./song.mp3");
-    audio.loop = true;
-    audio.volume = 0.2;
-    audio.play().catch(e => console.log(e));
-    return () => { audio.pause(); };
-  }, []);
   const dispatch = useDispatch()
   const flower = useSelector(selectSelectedFlower)
   const theme = useSelector((s) => s.theme.current)

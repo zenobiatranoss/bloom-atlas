@@ -27,7 +27,7 @@ export const store = configureStore({
         theme: persisted.theme,
         flowers: {
           items: flowersReducer(undefined, { type: '@@init' }).items,
-          selectedId: persisted.selectedId,
+          selectedId: flowersReducer(undefined, { type: '@@init' }).selectedId,
           hoveredId: null,
           favorites: persisted.favorites || [],
           query: ''
