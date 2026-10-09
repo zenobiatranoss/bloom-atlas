@@ -1,0 +1,221 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.specimen {
+  display: block;
+  overflow: visible;
+
+  &__ring {
+    fill: none;
+    stroke: var(--surface-border);
+    stroke-width: 1;
+    stroke-dasharray: 2 5;
+    vector-effect: non-scaling-stroke;
+  }
+
+  &__petal,
+  &__core {
+    stroke: var(--text);
+    stroke-opacity: 0.3;
+    stroke-width: 1;
+    vector-effect: non-scaling-stroke;
+  }
+
+  &__dot {
+    fill: var(--text);
+    fill-opacity: 0.5;
+  }
+}
+
+.herbarium {
+  padding: clamp(72px, 10vh, 140px) var(--pad) clamp(96px, 14vh, 200px);
+  border-top: 1px solid var(--surface-border);
+
+  &__head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: clamp(40px, 7vh, 80px);
+  }
+
+  &__title {
+    margin: 18px 0 0;
+    font-size: clamp(2.6rem, 6vw, 5.4rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.03em;
+  }
+
+  &__tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 28px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+
+    @include up(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 36px 32px;
+
+      > :nth-child(even) {
+        margin-top: 48px;
+      }
+    }
+
+    @include up(xl) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+
+      > :nth-child(even) {
+        margin-top: 0;
+      }
+
+      > :nth-child(3n + 2) {
+        margin-top: 64px;
+      }
+    }
+  }
+
+  &__empty {
+    margin: 0;
+    padding: 48px 0;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    font-style: italic;
+    color: var(--text-muted);
+  }
+}
+
+.finder {
+  width: min(320px, 100%);
+  padding: 10px 0;
+  border: 0;
+  border-bottom: 1px solid var(--surface-border);
+  background: none;
+  outline: none;
+  font: inherit;
+  font-size: 0.95rem;
+  color: var(--text);
+  transition: border-color 0.4s ease;
+
+  &:focus {
+    border-color: var(--text);
+  }
+
+  &::placeholder {
+    color: var(--text-muted);
+  }
+}
+
+.toggle {
+  padding: 10px 0;
+  border: 0;
+  background: none;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: color 0.3s ease;
+
+  &:hover,
+  &.is-on {
+    color: var(--text);
+  }
+}
+
+.plate-card {
+  position: relative;
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 22px 22px 26px;
+    text-align: left;
+    color: var(--text);
+    background: color-mix(in srgb, var(--text) 3%, transparent);
+    border: 1px solid var(--surface-border);
+    transition: transform 0.7s $ease-out, border-color 0.5s ease, background-color 0.5s ease;
+
+    &:hover {
+      transform: translateY(-8px);
+      border-color: color-mix(in srgb, var(--flower) 60%, var(--text));
+      background: color-mix(in srgb, var(--flower) 9%, transparent);
+    }
+
+    .specimen {
+      align-self: center;
+      width: 72%;
+      height: auto;
+      margin: 18px 0 22px;
+      transition: transform 1.2s $ease-out;
+    }
+
+    &:hover .specimen {
+      transform: rotate(14deg) scale(1.05);
+    }
+  }
+
+  &__no {
+    font-size: 0.65rem;
+    letter-spacing: 0.34em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  &__name {
+    font-family: $font-display;
+    font-size: 2.2rem;
+    line-height: 1;
+  }
+
+  &__latin {
+    margin: 6px 0 14px;
+    font-family: $font-display;
+    font-style: italic;
+    color: var(--text-muted);
+  }
+
+  &__meaning {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+
+  &__press {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    z-index: 2;
+    padding: 4px 0;
+    border: 0;
+    background: none;
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color 0.3s ease;
+
+    &:hover,
+    &.is-on {
+      color: var(--text);
+    }
+
+    &.is-on::before {
+      content: '';
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      margin-right: 8px;
+      border-radius: 50%;
+      background: var(--flower);
+      box-shadow: 0 0 0 1px color-mix(in srgb, var(--text) 35%, transparent);
+    }
+  }
+}

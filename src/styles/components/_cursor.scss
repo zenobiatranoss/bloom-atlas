@@ -1,0 +1,18 @@
+html {
+  cursor: var(--cursor, default);
+}
+
+button:not(:disabled),
+a,
+[role='button'],
+summary,
+select,
+label {
+  cursor: pointer;
+}
+
+input[type='search'],
+input[type='text'],
+textarea {
+  cursor: text;
+}

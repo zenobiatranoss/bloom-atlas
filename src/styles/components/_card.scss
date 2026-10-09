@@ -1,0 +1,87 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.flower-card {
+  position: relative;
+  padding: 32px;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  @include glass(20px);
+  @include smooth(transform box-shadow, 0.6s);
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -40% -20% auto auto;
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle, var(--glow), transparent 70%);
+    opacity: 0.55;
+    pointer-events: none;
+    @include smooth(opacity, 0.6s);
+  }
+
+  &:hover {
+    transform: translateY(-8px);
+    @include glow(50px);
+
+    &::before {
+      opacity: 0.9;
+    }
+  }
+
+  &__tag {
+    display: inline-block;
+    padding: 4px 14px;
+    margin-bottom: 18px;
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    border-radius: $radius-pill;
+    border: 1px solid var(--surface-border);
+    color: var(--accent);
+  }
+
+  &__title {
+    margin: 0 0 6px;
+    font-size: clamp(2.2rem, 4vw, 3.4rem);
+  }
+
+  &__latin {
+    margin: 0 0 18px;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+  }
+
+  &__meaning {
+    margin: 0 0 14px;
+    font-family: $font-display;
+    font-size: 1.5rem;
+    color: var(--accent-2);
+  }
+
+  &__text {
+    margin: 0;
+    max-width: 52ch;
+  }
+}
+
+.btn-atlas {
+  padding: 10px 26px;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  background: transparent;
+  border: 1px solid var(--surface-border);
+  border-radius: $radius-pill;
+  @include smooth(all, 0.4s);
+
+  &:hover {
+    background: var(--gradient);
+    border-color: transparent;
+    color: var(--bg);
+    @include glow(30px);
+  }
+}

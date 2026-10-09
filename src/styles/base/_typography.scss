@@ -1,0 +1,41 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $font-display;
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+p {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.eyebrow {
+  font-family: $font-body;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.display-title {
+  font-size: clamp(3.5rem, 11vw, 10rem);
+  font-weight: 300;
+  @include gradient-text;
+}
+
+.lead-quote {
+  font-family: $font-display;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(1.4rem, 2.6vw, 2.2rem);
+  color: var(--text);
+}
