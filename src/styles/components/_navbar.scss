@@ -93,7 +93,7 @@
   -webkit-backdrop-filter: blur(14px);
 }
 
-@each $id in garden, questions, herbarium, notes {
+@each $id in garden, questions, herbarium, lab, notes {
   html[data-section='#{$id}'] .atlas-nav__link[data-target='#{$id}'] {
     color: var(--text);
 

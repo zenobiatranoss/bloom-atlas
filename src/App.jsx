@@ -9,6 +9,7 @@ import Footer from './components/layout/Footer'
 import Philosophy from './components/sections/Philosophy'
 import Gallery from './components/sections/Gallery'
 import Detail from './components/sections/Detail'
+import Lab from './components/lab/Lab'
 import useScrollProgress from './hooks/useScrollProgress'
 import useReveal from './hooks/useReveal'
 import { flowers } from './data/flowers'
@@ -133,6 +134,7 @@ export default function App() {
         <Philosophy />
         <Gallery />
         <Detail />
+        <Lab />
         <Footer />
       </div>
 

@@ -6,6 +6,7 @@ const links = [
   { id: 'garden', label: 'Garden' },
   { id: 'questions', label: 'Questions' },
   { id: 'herbarium', label: 'Herbarium' },
+  { id: 'lab', label: 'Specimen lab' },
   { id: 'notes', label: 'Field notes' }
 ]
 

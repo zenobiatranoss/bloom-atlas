@@ -4,7 +4,7 @@ import $ from 'jquery'
 import { clamp } from '../utils/math'
 import { setScrollProgress } from '../store/slices/uiSlice'
 
-const sections = ['questions', 'herbarium', 'notes']
+const sections = ['questions', 'herbarium', 'lab', 'notes']
 
 export default function useScrollProgress() {
   const dispatch = useDispatch()
