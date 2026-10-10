@@ -26,7 +26,7 @@ export default function Philosophy() {
       <ol className="questions__list">
         {flowers.map((f, i) => (
           <li key={f.id} data-reveal style={{ '--i': i % 3, '--flower': f.colors.primary }}>
-            <button type="button" className="question" data-cursor="Open" onClick={() => open(f.id)}>
+            <button type="button" className="question" onClick={() => open(f.id)}>
               <span className="question__no">{String(i + 1).padStart(2, '0')}</span>
               <span className="question__text">{notes[f.id].question}</span>
               <span className="question__answer">

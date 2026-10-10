@@ -60,7 +60,7 @@ export default function Gallery() {
             const pressed = favorites.includes(f.id)
             return (
               <article key={f.id} className="plate-card" data-reveal style={{ '--i': i % 3, '--flower': f.colors.primary }}>
-                <button type="button" className="plate-card__main" data-cursor="Read" onClick={() => open(f.id)}>
+                <button type="button" className="plate-card__main" onClick={() => open(f.id)}>
                   <span className="plate-card__no">No. {String(no).padStart(2, '0')}</span>
                   <Specimen flower={f} />
                   <span className="plate-card__name">{f.name}</span>

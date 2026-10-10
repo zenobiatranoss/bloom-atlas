@@ -8,7 +8,7 @@ export default function Footer() {
         Seven flowers built from geometry in code. No models, no textures. Every petal is a curve that was
         bent, rippled and tinted by hand.
       </p>
-      <button type="button" className="btn-atlas" data-cursor="Up" onClick={scrollToTop}>
+      <button type="button" className="btn-atlas" onClick={scrollToTop}>
         Back to the garden
       </button>
       <div className="dev-signature" style={{ position: "absolute", left: "2rem", bottom: "1.5rem", fontSize: "0.85rem", opacity: 0.7, letterSpacing: "1px", fontFamily: "inherit" }}>

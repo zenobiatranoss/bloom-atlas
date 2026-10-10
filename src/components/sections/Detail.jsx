@@ -96,7 +96,7 @@ export default function Detail() {
           </ul>
 
           <div className="notes__actions">
-            <button type="button" className="btn-atlas" data-cursor="Bloom" onClick={scrollToTop}>
+            <button type="button" className="btn-atlas" onClick={scrollToTop}>
               See it bloom
             </button>
             <button type="button" className="btn-atlas" onClick={() => dispatch(toggleFavorite(flower.id))}>

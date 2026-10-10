@@ -4,7 +4,6 @@ import { flowers } from '../../data/flowers'
 const initialState = {
   items: flowers.map((f) => f.id),
   selectedId: flowers[0].id,
-  hoveredId: null,
   favorites: [],
   query: ''
 }
@@ -15,9 +14,6 @@ const flowersSlice = createSlice({
   reducers: {
     selectFlower(state, action) {
       state.selectedId = action.payload
-    },
-    hoverFlower(state, action) {
-      state.hoveredId = action.payload
     },
     toggleFavorite(state, action) {
       const id = action.payload
@@ -39,17 +35,13 @@ const flowersSlice = createSlice({
   }
 })
 
-export const { selectFlower, hoverFlower, toggleFavorite, setQuery, nextFlower, prevFlower } =
+export const { selectFlower, toggleFavorite, setQuery, nextFlower, prevFlower } =
   flowersSlice.actions
 
 const selectFlowersState = (state) => state.flowers
 
 export const selectSelectedFlower = createSelector(selectFlowersState, (s) =>
   flowers.find((f) => f.id === s.selectedId)
-)
-
-export const selectHoveredFlower = createSelector(selectFlowersState, (s) =>
-  flowers.find((f) => f.id === s.hoveredId) || null
 )
 
 export const selectFilteredFlowers = createSelector(selectFlowersState, (s) => {

@@ -5,8 +5,6 @@ const uiSlice = createSlice({
   initialState: {
     ready: false,
     loaded: false,
-    detailOpen: false,
-    menuOpen: false,
     soundOn: false,
     scrollProgress: 0
   },
@@ -20,33 +18,12 @@ const uiSlice = createSlice({
     setLoaded(state, action) {
       state.loaded = action.payload
     },
-    openDetail(state) {
-      state.detailOpen = true
-    },
-    closeDetail(state) {
-      state.detailOpen = false
-    },
-    toggleMenu(state) {
-      state.menuOpen = !state.menuOpen
-    },
-    toggleSound(state) {
-      state.soundOn = !state.soundOn
-    },
     setScrollProgress(state, action) {
       state.scrollProgress = action.payload
     }
   }
 })
 
-export const {
-  setReady,
-  setSound,
-  setLoaded,
-  openDetail,
-  closeDetail,
-  toggleMenu,
-  toggleSound,
-  setScrollProgress
-} = uiSlice.actions
+export const { setReady, setSound, setLoaded, setScrollProgress } = uiSlice.actions
 
 export default uiSlice.reducer

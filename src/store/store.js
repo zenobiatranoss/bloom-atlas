@@ -15,6 +15,8 @@ const loadState = () => {
 }
 
 const persisted = loadState()
+const defaults = flowersReducer(undefined, { type: '@@init' })
+const knownFlower = (id) => defaults.items.includes(id)
 
 export const store = configureStore({
   reducer: {
@@ -26,11 +28,9 @@ export const store = configureStore({
     ? {
         theme: persisted.theme,
         flowers: {
-          items: flowersReducer(undefined, { type: '@@init' }).items,
-          selectedId: flowersReducer(undefined, { type: '@@init' }).selectedId,
-          hoveredId: null,
-          favorites: persisted.favorites || [],
-          query: ''
+          ...defaults,
+          selectedId: knownFlower(persisted.selectedId) ? persisted.selectedId : defaults.selectedId,
+          favorites: persisted.favorites || []
         }
       }
     : undefined

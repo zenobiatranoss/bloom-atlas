@@ -14,7 +14,7 @@ import {
 import { petalGeometry, buildFloretGeometry } from '../../utils/shapes'
 import { veinTexture } from '../../utils/textures'
 import PetalLayer from './Petals'
-import { selectFlower, hoverFlower } from '../../store/slices/flowersSlice'
+import { selectFlower } from '../../store/slices/flowersSlice'
 
 const SEED_COUNT = 520
 const leafDefault = { base: '#2f5a36', mid: '#4a7d45', tip: '#78a95a' }
@@ -319,12 +319,10 @@ export default function Flower({ flower }) {
         onPointerOver={(e) => {
           e.stopPropagation()
           hovered.current = true
-          dispatch(hoverFlower(flower.id))
           document.body.style.cursor = 'pointer'
         }}
         onPointerOut={() => {
           hovered.current = false
-          dispatch(hoverFlower(null))
           document.body.style.cursor = ''
         }}
       >
